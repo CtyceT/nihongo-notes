@@ -3,7 +3,7 @@
 把日文課的內容整理成「一個主題一頁」的筆記網站，方便開卷考查閱與複習。
 每頁都有固定的六個區塊：**一句話重點、規則、例句、易混淆、開卷速查、自我小測**。
 
-- 網站：https://【你的 GitHub 帳號】.github.io/nihongo-notes/
+- 網站：https://CtyceT.github.io/nihongo-notes/
 - 專案規則：[AGENTS.md](AGENTS.md)（給 AI 讀的開發規則；CLAUDE.md 會引用它）
 
 ## 目前的筆記
