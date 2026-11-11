@@ -1,0 +1,195 @@
+/* 日文課筆記站 — 全站唯一樣式表。新增 class 時請同步更新 AGENTS.md 第 6 節。 */
+
+:root {
+  --paper: #faf7f0;
+  --surface: #ffffff;
+  --ink: #2b2a27;
+  --ink-soft: #6b665c;
+  --line: #e4ddcf;
+  --accent: #c0392b;        /* 朱色 */
+  --accent-soft: #f6e3df;
+  --mark: #fff1a8;
+  --todo: #b45309;
+  --radius: 10px;
+  --font-body: "Noto Sans TC", "Noto Sans JP", system-ui, sans-serif;
+  --font-head: "Noto Serif JP", "Noto Serif TC", serif;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1c1b19;
+    --surface: #252421;
+    --ink: #ece7dc;
+    --ink-soft: #a9a294;
+    --line: #3a3833;
+    --accent: #e57361;
+    --accent-soft: #3b2724;
+    --mark: #5c4f12;
+    --todo: #f0a64a;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.75;
+}
+
+a { color: var(--accent); }
+
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+
+/* ---------- 頁首 ---------- */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+.site-header .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding-top: 12px; padding-bottom: 12px;
+}
+.brand {
+  font-family: var(--font-head); font-weight: 700; font-size: 1.15rem;
+  color: var(--ink); text-decoration: none;
+}
+.brand .seal {
+  display: inline-grid; place-items: center;
+  width: 1.7em; height: 1.7em; margin-right: .4em;
+  background: var(--accent); color: #fff; border-radius: 4px; font-size: .85em;
+}
+
+/* ---------- 首頁 ---------- */
+.hero { padding: 40px 0 16px; }
+.hero h1 { font-family: var(--font-head); font-size: 2rem; margin: 0 0 8px; }
+.hero p { color: var(--ink-soft); margin: 0; }
+
+.search {
+  width: 100%; margin: 20px 0 8px; padding: 10px 14px;
+  font: inherit; color: var(--ink); background: var(--surface);
+  border: 1px solid var(--line); border-radius: var(--radius);
+}
+.tag-filter { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.tag-filter button {
+  font: inherit; font-size: .85rem; cursor: pointer;
+  padding: 2px 12px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink-soft);
+}
+.tag-filter button[aria-pressed="true"] {
+  background: var(--accent); border-color: var(--accent); color: #fff;
+}
+
+.note-list { list-style: none; padding: 0; margin: 0 0 48px; display: grid; gap: 12px; }
+.note-card a {
+  display: grid; grid-template-columns: auto 1fr; gap: 4px 16px;
+  padding: 16px; text-decoration: none; color: inherit;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.note-card a:hover { border-color: var(--accent); }
+.note-card .num {
+  grid-row: span 3; font-family: var(--font-head); font-size: 1.6rem;
+  color: var(--accent); line-height: 1.2;
+}
+.note-card .title { font-weight: 700; }
+.note-card .summary { color: var(--ink-soft); font-size: .92rem; }
+.note-card .meta { font-size: .8rem; color: var(--ink-soft); }
+.empty { color: var(--ink-soft); }
+
+.tag {
+  display: inline-block; font-size: .75rem; padding: 0 8px; margin-right: 4px;
+  border-radius: 999px; background: var(--accent-soft); color: var(--accent);
+}
+
+/* ---------- 筆記頁 ---------- */
+.note-header { padding: 32px 0 8px; }
+.note-header .lesson { color: var(--accent); font-weight: 700; letter-spacing: .05em; }
+.note-header h1 { font-family: var(--font-head); font-size: 1.9rem; margin: 4px 0; }
+.note-header .meta { color: var(--ink-soft); font-size: .85rem; }
+
+.block {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 4px 20px 16px; margin: 16px 0;
+}
+.block > h2 {
+  font-family: var(--font-head); font-size: 1.15rem;
+  border-left: 4px solid var(--accent); padding-left: 10px; margin: 16px 0 12px;
+}
+.block[data-block="summary"] { border-left: 4px solid var(--accent); }
+
+/* 規則表 */
+.rule-scroll { overflow-x: auto; }
+table.rule { width: 100%; border-collapse: collapse; font-size: .95rem; }
+table.rule th, table.rule td {
+  border-bottom: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top;
+}
+table.rule th { background: var(--accent-soft); white-space: nowrap; }
+
+/* 例句 */
+ol.examples { padding-left: 1.4em; margin: 0; }
+.ex { margin-bottom: 12px; }
+.ex p { margin: 0; }
+.jp { font-size: 1.2rem; font-family: "Noto Sans JP", var(--font-body); }
+.zh { color: var(--ink-soft); font-size: .92rem; }
+ruby rt { font-size: .55em; color: var(--ink-soft); }
+mark { background: var(--mark); color: inherit; padding: 0 2px; border-radius: 2px; }
+
+/* 易混淆 */
+ul.pitfall { padding-left: 1.2em; margin: 0; }
+ul.pitfall li { margin-bottom: 8px; }
+.wrong { color: var(--accent); text-decoration: line-through; }
+
+/* 開卷速查 */
+.cheat {
+  margin: 0; padding: 12px 16px; list-style: none;
+  border: 2px dashed var(--accent); border-radius: var(--radius); background: var(--paper);
+}
+.cheat li { padding: 2px 0; }
+
+/* 自我小測 */
+ol.quiz { padding-left: 1.4em; margin: 0; }
+ol.quiz li { margin-bottom: 10px; }
+.quiz details { margin-top: 4px; color: var(--ink-soft); }
+.quiz summary { cursor: pointer; color: var(--accent); font-size: .9rem; }
+
+/* 假名表 */
+.kana-grid { border-collapse: collapse; width: 100%; text-align: center; }
+.kana-grid td, .kana-grid th { border: 1px solid var(--line); padding: 6px 4px; }
+.kana-grid th { background: var(--accent-soft); font-size: .85rem; }
+.kana-grid .h { font-size: 1.35rem; display: block; line-height: 1.3; }
+.kana-grid .k { font-size: .95rem; color: var(--ink-soft); }
+.kana-grid .r { font-size: .72rem; color: var(--ink-soft); display: block; }
+
+/* 待確認 */
+.todo {
+  font-size: .78rem; color: var(--todo); border: 1px solid var(--todo);
+  border-radius: 4px; padding: 0 6px; margin-left: 4px;
+}
+
+/* 上下頁導覽 */
+.note-nav {
+  display: flex; justify-content: space-between; gap: 12px;
+  margin: 24px 0 48px; flex-wrap: wrap;
+}
+.note-nav a {
+  flex: 1 1 200px; padding: 12px 16px; text-decoration: none;
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface);
+}
+.note-nav a.next { text-align: right; }
+.note-nav small { display: block; color: var(--ink-soft); }
+
+.site-footer {
+  border-top: 1px solid var(--line); color: var(--ink-soft);
+  font-size: .8rem; padding: 16px 0 32px;
+}
+
+@media (max-width: 560px) {
+  .hero h1 { font-size: 1.6rem; }
+  .note-header h1 { font-size: 1.5rem; }
+  .block { padding: 4px 14px 12px; }
+  .kana-grid .h { font-size: 1.1rem; }
+}

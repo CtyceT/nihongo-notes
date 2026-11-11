@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>日文課筆記</title>
+  <meta name="description" content="日文課的一主題一頁筆記：規則、例句、易混淆、開卷速查與自我小測。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="seal">日</span>日文課筆記</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>日文課筆記</h1>
+      <p>一個主題一頁。每頁都有：一句話重點、規則、例句、易混淆、開卷速查、自我小測。</p>
+    </section>
+
+    <input id="note-search" class="search" type="search" placeholder="搜尋標題、說明或標籤，例如：助詞" aria-label="搜尋筆記">
+    <div id="tag-filter" class="tag-filter" aria-label="依標籤篩選"></div>
+
+    <ol id="note-list" class="note-list" data-base="notes/"></ol>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">清單由 assets/notes-index.js 自動產生。內容依課程講義整理，如有錯誤以講義為準。</div>
+  </footer>
+
+  <script src="assets/notes-index.js"></script>
+  <script src="assets/main.js"></script>
+</body>
+</html>

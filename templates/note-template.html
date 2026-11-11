@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 格式：第 NN 課｜主題名稱｜日文課筆記 -->
+  <title>第 NN 課｜主題名稱｜日文課筆記</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<!-- data-note-id 必須等於檔名（不含 .html），例如 04-adjectives -->
+<body data-note-id="NN-slug">
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../index.html"><span class="seal">日</span>日文課筆記</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <header class="note-header">
+      <div class="lesson">第 NN 課</div>
+      <h1>主題名稱</h1>
+      <div id="note-meta" class="meta"></div>
+    </header>
+
+    <!-- 六個區塊：順序與 data-block 名稱都不能改（AGENTS.md 第 5 節） -->
+
+    <section class="block" data-block="summary">
+      <h2>一句話重點</h2>
+      <p>1～2 句，說明這個主題解決什麼問題。</p>
+    </section>
+
+    <section class="block" data-block="rules">
+      <h2>規則</h2>
+      <div class="rule-scroll">
+        <table class="rule">
+          <thead><tr><th>項目</th><th>規則</th><th>例</th></tr></thead>
+          <tbody>
+            <tr><td>規則名稱</td><td>說明</td><td>例子</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="block" data-block="examples">
+      <h2>例句</h2>
+      <ol class="examples">
+        <li class="ex">
+          <p class="jp"><ruby>私<rt>わたし</rt></ruby>は<ruby>学生<rt>がくせい</rt></ruby>です。</p>
+          <p class="zh">我是學生。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="block" data-block="pitfalls">
+      <h2>易混淆</h2>
+      <ul class="pitfall">
+        <li><span class="wrong">容易錯成的寫法</span> → 正確寫法：原因。</li>
+      </ul>
+    </section>
+
+    <section class="block" data-block="cheatsheet">
+      <h2>開卷速查</h2>
+      <ul class="cheat">
+        <li>最多 8 行，考試時一眼看完。</li>
+      </ul>
+    </section>
+
+    <section class="block" data-block="quiz">
+      <h2>自我小測</h2>
+      <ol class="quiz">
+        <li>題目
+          <details><summary>看答案</summary>答案與簡短說明。</details>
+        </li>
+      </ol>
+    </section>
+
+    <nav id="note-nav" class="note-nav" aria-label="上一篇與下一篇"></nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap"><a href="../index.html">回到筆記目錄</a></div>
+  </footer>
+
+  <script src="../assets/notes-index.js"></script>
+  <script src="../assets/main.js"></script>
+</body>
+</html>
